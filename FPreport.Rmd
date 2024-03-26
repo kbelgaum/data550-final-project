@@ -1,0 +1,46 @@
+---
+title: "Final Project 3"
+author: "Kanak Belgaum"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(summarytools.tmp.img.dir=tempdir())
+
+setwd('~/DATA_550/final_project')
+
+here::i_am('FPreport.Rmd')
+```
+
+## Introduction
+
+This dataset comes from Kaggle (via the National Institute of Diabetes and Digestive and Kidney Diseases), which details various diagnostic measurements of women with Pima Indian heritage. These diagnostic variables include measurements like number of pregnancies, insulin levels, and skin thickness. The outcome variable of this dataset is binary and lists whether or not an individual has diabetes. My vision for an R Markdown report with this data is to perform a basic exploratory data analysis that will potentially elucidate correlations between these variables and diabetes outcomes.
+
+
+First, we read the chosen dataset from a local directory.
+
+## Formatted Table
+
+``` {r table, results='asis'}
+pima_table1 <- readRDS(
+  here::here('output/pima_table1.rds'))
+
+print(pima_table1)
+```
+
+The table above is a simple 'Table 1' that displays the mean and standard deviation of each variable, for those with and without the outcome (diabetes).
+
+## Well-formatted Figure
+
+``` {r figure}
+library(pacman)
+p_load(rio, Hmisc)
+
+df <- import('dataset/diabetes.csv')
+hist.data.frame(df)
+```
+
+The figure above displays histograms for each of the continuous variables in our dataframe. From this we can analyze the distribution of each variable to get a better understanding of our data. In addition, we can see that the Skin Thickness and Insulin columns have an alarming amount of values that equal zero. For future analyses, we should check how exactly data was collected and figure out if these zero values should be considered missing data.
+
