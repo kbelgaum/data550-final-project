@@ -7,3 +7,7 @@ table1:
 .PHONY: clean
 clean:
 	rm -f output/*.rds && rm -f FPreport.html
+
+.PHONY: install	
+install: 
+	Rscript -e "renv::restore(prompt=FALSE)"

@@ -1,3 +1,4 @@
+install.packages('pacman')
 library(pacman)
 p_load(tidyverse, rio, here, labelled,
        summarytools, gt, gtsummary, Hmisc)

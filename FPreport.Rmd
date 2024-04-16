@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 options(summarytools.tmp.img.dir=tempdir())
 
-setwd('~/DATA_550/final_project')
+# set wd to project directory
 
 here::i_am('FPreport.Rmd')
 ```
