@@ -7,6 +7,14 @@
 Final report should be generated executing `make`. The rule in the makefile
 used to do this is titled "FPreport.html"
 
+## Docker build
+
+Use the project_image rule from the makefile.
+
+## Docker run
+
+Use the final_project/FPreprt.html rule from the makefile.
+
 ## Pieces of code used
 
 `code/01_make_table.R`
